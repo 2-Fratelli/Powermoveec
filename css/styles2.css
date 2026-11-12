@@ -1,0 +1,298 @@
+/* =========================================
+   POWERMOVE EC - PAGINAS INTERNAS
+   ========================================= */
+
+/* CONTENEDOR PRINCIPAL */
+
+.inner-main {
+    width: min(1200px, 92%);
+    margin: 0 auto;
+    padding: 35px 0 70px;
+}
+
+/* ENLACE DE REGRESO */
+
+.back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    margin-bottom: 25px;
+    color: var(--text);
+    font-weight: 700;
+    text-decoration: none;
+    transition: color .2s ease, transform .2s ease;
+}
+
+.back-link:hover {
+    color: var(--blue);
+    transform: translateX(-4px);
+}
+
+/* HERO */
+
+.inner-hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 35px;
+
+    padding: 35px;
+    margin-bottom: 65px;
+
+    border: 1px solid var(--border);
+    border-radius: 24px;
+    overflow: hidden;
+
+    background:
+        radial-gradient(
+            circle at 80% 40%,
+            rgba(0, 135, 255, .22),
+            transparent 55%
+        ),
+        var(--surface);
+
+    box-shadow: var(--shadow);
+}
+
+.inner-hero h1 {
+    font-size: clamp(2.8rem, 6vw, 5rem);
+    line-height: 1.05;
+    margin: 15px 0;
+    color: var(--text);
+}
+
+.title-dot {
+    color: var(--blue);
+}
+
+.inner-subtitle {
+    max-width: 480px;
+    line-height: 1.7;
+    color: var(--muted);
+}
+
+/* IMAGEN DEL HERO */
+
+.inner-hero-image {
+    position: relative;
+    height: 300px;
+    overflow: hidden;
+    border-radius: 18px;
+}
+
+/* VIDEO DEL HERO */
+
+.video-container {
+    width: 100%;
+    height: 300px;
+    overflow: hidden;
+    border-radius: 16px;
+    position: relative;
+}
+  
+.video-container video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.inner-hero-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+
+    transition: transform .4s ease;
+}
+
+.inner-hero:hover .inner-hero-image img {
+    transform: scale(1.04);
+}
+
+/* CONTENIDO */
+
+.inner-content {
+    margin-bottom: 65px;
+}
+
+.inner-content h2 {
+    margin: 15px 0 30px;
+    font-size: clamp(1.6rem, 3vw, 2.3rem);
+    color: var(--text);
+}
+
+/* CUADRÍCULA DE TARJETAS */
+
+.content-placeholder-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+}
+
+/* TARJETAS */
+
+.exercise-card {
+    position: relative;
+    padding: 20px;
+
+    border: 1px solid var(--border);
+    border-radius: 20px;
+
+    background: var(--surface);
+    box-shadow: var(--shadow);
+
+    transition:
+        transform .25s ease,
+        box-shadow .25s ease,
+        border-color .25s ease;
+}
+
+.exercise-card:hover,
+.exercise-card:focus-visible {
+    transform: translateY(-9px) rotate(-.5deg);
+    border-color: var(--blue);
+    box-shadow: 0 20px 28px rgba(7, 92, 255, .19);
+}
+
+/* IMÁGENES DE LAS TARJETAS */
+
+.exercise-card img {
+    display: block;
+    width: 100%;
+    height: 175px;
+
+    object-fit: cover;
+    object-position: center;
+
+    border-radius: 14px;
+    margin-bottom: 18px;
+
+    transition: transform .3s ease;
+}
+
+.exercise-card:hover img {
+    transform: scale(1.035);
+}
+
+/* NÚMEROS */
+
+.exercise-card > span {
+    display: inline-block;
+    margin-bottom: 10px;
+
+    color: var(--blue);
+    font-size: .8rem;
+    font-weight: 800;
+    letter-spacing: .12em;
+}
+
+/* TEXTOS */
+
+.exercise-card h3 {
+    margin: 0 0 10px;
+    color: var(--text);
+    font-size: 1.25rem;
+}
+
+.exercise-card p {
+    margin: 0;
+    color: var(--muted);
+    line-height: 1.65;
+}
+
+/* LLAMADA A LA ACCIÓN */
+
+.movement-cta {
+    position: relative;
+    overflow: hidden;
+
+    margin-top: 65px;
+    padding: 45px 30px;
+
+    text-align: center;
+    border: 1px solid var(--border);
+    border-radius: 24px;
+
+    background:
+        radial-gradient(
+            circle at 50% 50%,
+            rgba(0, 135, 255, .22),
+            transparent 75%
+        ),
+        var(--surface);
+
+    box-shadow: var(--shadow);
+}
+
+.movement-cta h2 {
+    margin: 0 0 12px;
+    color: var(--text);
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+}
+
+.movement-cta p {
+    color: var(--muted);
+    line-height: 1.7;
+}
+
+/* ANIMACIONES ACCESIBLES */
+
+@media (prefers-reduced-motion: reduce) {
+    .exercise-card,
+    .exercise-card img,
+    .inner-hero-image img,
+    .back-link {
+        transition: none;
+    }
+
+    .exercise-card:hover,
+    .exercise-card:focus-visible,
+    .exercise-card:hover img,
+    .inner-hero:hover .inner-hero-image img {
+        transform: none;
+    }
+}
+
+/* RESPONSIVE */
+
+@media (max-width: 760px) {
+
+    .inner-main {
+        width: 92%;
+        padding-top: 25px;
+    }
+
+    .inner-hero {
+        grid-template-columns: 1fr;
+        gap: 22px;
+        padding: 22px;
+        margin-bottom: 45px;
+    }
+
+    .inner-hero-image {
+        height: 220px;
+    }
+
+    .content-placeholder-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .exercise-card img {
+        height: 200px;
+    }
+
+    .movement-cta {
+        margin-top: 45px;
+        padding: 30px 20px;
+    }
+}
+
+@media (min-width: 761px) and (max-width: 1000px) {
+
+    .content-placeholder-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
